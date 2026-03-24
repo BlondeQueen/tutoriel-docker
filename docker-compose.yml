@@ -1,0 +1,23 @@
+services:
+  juice-shop:
+    image: bkimminich/juice-shop
+    container_name: cible
+    networks:
+      - devsecops-net
+    ports:
+      - "3000:3000"
+
+  zaproxy:
+    image: zaproxy/zap-weekly
+    container_name: scanner
+    networks:
+      - devsecops-net
+    volumes:
+      - ./rapports:/zap/wrk
+    command: sleep infinioty
+networks:
+  devsecops-net:
+    driver: bridge
+
+volumes:
+  rapports:
