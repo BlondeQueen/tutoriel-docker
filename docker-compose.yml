@@ -13,8 +13,8 @@ services:
     networks:
       - devsecops-net
     volumes:
-      - ./rapports:/zap/wrk
-    command: sleep infinioty
+      - rapports:/zap/wrk
+
 networks:
   devsecops-net:
     driver: bridge
